@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {total,money,orderMessage,whatsappUrl} from '../order.js';
+assert.equal(total({special:2,nigiri:1}),11470);
+assert.equal(total({}),0);
+assert.equal(money(4290),'R$ 42,90');
+const delivery=orderMessage({special:2,nigiri:1},{name:'Ana',unit:'pinheiros',mode:'delivery',address:'Rua A, 10',payment:'Pix',notes:'Sem cebolinha'});
+for(const value of ['2x Kintsuru Special Roll','1x Niguiri de salmão','114,70','Rua A, 10','Sem cebolinha','Taxa de entrega: a confirmar'])assert.ok(delivery.includes(value),value);
+const pickup=orderMessage({special:1},{name:'José',unit:'liberdade',mode:'pickup',payment:'Dinheiro',notes:''});
+assert.ok(pickup.includes('Retirada'));assert.ok(!pickup.includes('Endereço:'));assert.ok(!pickup.includes('Taxa de entrega'));
+assert.equal(new URL(whatsappUrl('',delivery)).searchParams.get('text'),delivery);
+assert.equal(new URL(whatsappUrl('5511999999999',pickup)).pathname,'/5511999999999');
+console.log('PASS: cálculo em centavos, total, entrega, retirada e mensagem WhatsApp.');
