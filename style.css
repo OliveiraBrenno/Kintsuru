@@ -8,3 +8,5 @@
 @media(max-width:760px){.nav-toggle{margin-left:auto}}
 
 .cat-3,.cat-4{color:var(--paper)}.cat-3 .category-image:after,.cat-4 .category-image:after{display:block}
+
+.button:disabled{cursor:default;opacity:.65;transform:none}
