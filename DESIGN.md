@@ -250,3 +250,10 @@ A mensagem temporária usa marinho e papel, aparece perto da borda inferior, sob
 - **Don't** apresentar as reproduções raster como arquivos vetoriais originais da marca.
 - **Don't** cortar a silhueta da logo ou do mascote para preencher uma área de imagem.
 - **Don't** usar a escrita de pincel nos controles de quantidade ou no formulário do pedido.
+
+
+## Refinamento técnico após auditoria — 06/11/2026
+
+Ações principais, filtros, quantidades e navegação têm área de ativação de pelo menos 44 px; campos usam 16 px e 48 px. Descrições do cardápio usam 14 px e detalhes pelo menos 12 px. Textos ampliados quebram sem perder palavras. Escape retorna ao acionador do menu; clique externo e mudança de breakpoint fecham o painel. Checkout rejeita espaços em campos obrigatórios e limpa erro de endereço na retirada. Hero, logo e mascotes agora usam exports WebP, com PNGs originais preservados.
+
+Relatório, evidências e limites em AUDIT.md. As decisões desta seção prevalecem sobre as descrições históricas correspondentes.
